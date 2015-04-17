@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Services running on the client and the server</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66889254">
+<META name="CONTENT_SOURCE_REVISION" content="02082012123715">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66889254"></a>Services running on the client and the server</h2></div></div></div>
+<p><a name="v66889291"></a>You can monitor the following services on the Symantec Endpoint Protection client. Stop and start events for these services are also written to the Windows Event Log, but we recommend that you monitor the services directly.</p>
+<div class="table">
+<a name="v66889292"></a><p class="title">Table: Symantec Endpoint Protection client services</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Symantec Endpoint Protection client services" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66889298"></a><p>Service Name</p>
+</th>
+<th><p>Service Description</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66889300"></a><p><span class="guilabel">SepMasterService</span>; display name Symantec Endpoint Protection</p>
+</td>
+<td><p>Provides virus-scanning for Symantec Endpoint Protection</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66889301"></a><p><span class="guilabel">SmcSrvice</span>; display name Symantec Management Client</p>
+</td>
+<td><p>Provides communication with Symantec Endpoint Protection Manager. Also provides Network Threat Protection and Application and Device Control for the client.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66889302"></a><p><span class="guilabel">SNAC</span>; display name Symantec Network Access Control</p>
+</td>
+<td><p>Checks that the computer complies with the defined security policy and communicates with the Symantec Enforcers to allow your computer to access the corporate network.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v66889303"></a>You can monitor the following services on the management server:</p>
+<div class="table">
+<a name="v66889304"></a><p class="title">Table: Management server services</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Management server services" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66889310"></a><p>Service Name</p>
+</th>
+<th><p>Service Description</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66889312"></a><p><span class="guilabel">SQLANYs_sem5</span>; display name Symantec Embedded Database</p>
+</td>
+<td>
+<p>Embedded database used by Symantec Endpoint Protection Manager</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">This service is not useful if Symantec Endpoint Protection Manager is installed with a SQL Server database.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66889313"></a><p><span class="guilabel">semsrv</span>; display name Symantec Endpoint Protection Manager</p>
+</td>
+<td><p> Application server which communicates with Symantec Endpoint Protection Manager, Symantec Protection clients, and a database.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66889314"></a><p><span class="guilabel">semwebsrv</span>; display name Symantec Endpoint Protection Manager Webserver</p>
+</td>
+<td>
+<p>Apache/2.2.21.5 (Win32) mod_ssl/2.2.21.5 OpenSSL/0.9.8r mod_fcgid/2.3.6.5</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">Stopping or starting this service also stops or starts <span class="guilabel">semsrv</span>. This service is therefore the most useful for direct monitoring.</p></td>
+</tr></table></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

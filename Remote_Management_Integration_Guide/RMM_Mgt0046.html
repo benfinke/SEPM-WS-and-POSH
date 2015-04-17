@@ -1,0 +1,221 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Server monitoring examples</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v69549597">
+<META name="CONTENT_SOURCE_REVISION" content="03062012100239">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v69549597"></a>Server monitoring examples</h2></div></div></div>
+<p><a name="v69549599"></a>The following snippets illustrate basic server monitoring. They are written in Windows PowerShell, but can be converted to VisualBasic or any other language that you prefer.</p>
+<p><a name="v69549600"></a><span class="guilabel">License state</span></p>
+<p><a name="v72526250"></a><i class="citetitle">Summary license information</i></p>
+<p><a name="v69549601"></a>Licensing events on the management server provide summary license information. The event message text also provides details to help with license reporting and remediation.</p>
+<a name="v69549605"></a><pre class="programlisting">#Get events in the category that we need to monitor
+#then get eventID from first event in array
+
+(Get-EventLog "Symantec Endpoint Protection Manager" -newest 50 '
+| Where-Object {$_.Category -eq "Licensing"} | Select-Object -index 0).EventID
+
+#Returns 7100 == License status is up to date and in compliance with licensing requirements
+#Returns 7101 == License is about to expire
+#Returns 7102 == License is expired
+#Returns 7103 == Trial license is installed
+#Returns 7104 == Upgrade license is installed</pre>
+<p><a name="v72526251"></a><i class="citetitle">License status details</i></p>
+<p><a name="v72526252"></a>If your remote management solution requires more details about the status of individual licenses, you can parse the message text of the license status eventID.</p>
+<a name="v72526253"></a><pre class="programlisting">#takes a name:value pair
+#returns the value
+Function getValue ($line)
+{
+    $words = $line -split ":"
+    return $words[1]
+}
+
+#takes an array of lines, made up of name:value pairs. 
+#returns an array of 'value'
+Function getValues ($lines)
+{
+    $retval = @()
+    foreach ($line in $lines)
+    {
+        $retval += getValue($line)
+    }
+    return $retval
+}
+
+
+#takes a licenseBlock (an array of values)
+#returns a dictionary of the attributes
+Function parseLicenseBlock ($lines)
+{
+    $licenseType =    $lines[1]
+    $seatsInLicense = $lines[2]
+    $expires =        $lines[3]
+    return ,@{"type"=$licenseType; "seats"=$seatsInLicense;  "expires"=$expires}
+}
+
+
+#takes an expiration date
+#returns a well formatted string for expiration
+#if license already expired, return "(30 days ago)"
+#if license expires in the future, return "(30 days remaining)"
+#if license expires today, returns "(today)"
+Function expirationStr ($expDate)
+{
+    $expInDays = ([DateTime]$expDate - [DateTime]::Now.Date).Days
+    $expirationStr = " ("
+    if ($expInDays -eq 0) {$expirationStr += "today"}
+    else
+    {
+        $expirationStr += [string]([Math]::abs($expInDays)) + " days "
+        if ($expInDays -lt 0) {$expirationStr += "ago"}
+        if ($expInDays -gt 0) {$expirationStr += "remaining"}
+    }
+    $expirationStr += ")"
+    return $expDate + $expirationStr
+}
+
+$evt = Get-WinEvent -logName "Symantec Endpoint Protection Manager" | where {$_.id -ge "7100" -and $_.id -lt "7200"} | select -first 1
+
+$lines = $evt.Message -split "'n"
+$licenses = @() #array of licenses
+
+$description =   $lines[0]
+$totalseats =    getValue($lines[1])
+$usedseats =     getValue($lines[2])
+
+# get a license block and process it
+for ($i=3;$i -lt $lines.count-1;$i+=4)
+{
+    $licenseBlock = $lines[$i..($i+3)]
+    $licenses += ,(parseLicenseBlock(getValues($licenseBlock)))
+}
+
+#create description
+switch ($evt.id)
+{
+    "7100" {$descr  = "In compliance"}
+    "7101" {$descr  = "About to expire"}
+    "7103" {$descr  = "Over-deployed"}
+    "7104" {$descr  = "Trial license installed"}
+    "7105" {$descr  = "Upgrade license installed"}
+    default {$descr = $license.type}
+}
+   
+#create output
+Write-Host "License Status: " $descr
+Write-Host "Seats currently licensed: " $totalseats
+Write-Host "Seats currently used:" $usedseats
+foreach ($license in $licenses)
+{
+    Write-Host " "
+    Write-Host "License type: " $license.type
+    Write-Host "      License size: " $license.seats
+    $expStr = expirationStr($license.expires)
+    Write-Host "      Expires:" $expStr
+}</pre>
+<p><a name="v69549607"></a>See <a href="RMM_Mgt0050.html" title="Licensing events">Licensing events</a>.</p>
+<p><a name="v69549612"></a>See <a href="RMM_Mgt0044.html" title="Monitoring license state on the management server">Monitoring license state on the management server</a>.</p>
+<p><a name="v69549602"></a><span class="guilabel">Content status</span></p>
+<a name="v69549606"></a><pre class="programlisting">#Get events in the range that we need to monitor
+#(Content Category includes session start and stop, which don't tell us about content status)
+#then get eventID from first event in array
+
+(Get-EventLog "Symantec Endpoint Protection Manager" -newest 50 '
+| Where-Object {($_.EventID -ge 7201) -and ($_.EventID -le 7203)} | Select-Object -index 0).EventID
+
+#Returns 7202 == Content on the server is up to date
+#Returns 7201 or 7203 == Content on the server is out of date
+
+#You can also monitor the status of LiveUpdate sessions on the management server.</pre>
+<p><a name="v69549609"></a>See <a href="RMM_Mgt0049.html" title="Content revision state events on the management server">Content revision state events on the management server</a>.</p>
+<p><a name="v69549614"></a>See <a href="RMM_Mgt0042.html" title="Monitoring the management server">Monitoring the management server</a>.</p>
+</div>
+</body>
+</html>

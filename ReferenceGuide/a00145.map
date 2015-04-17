@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$a00020.html" title="Thrown when the caller to the web service has insufficient privileges to access the requested service..." alt="" coords="5,205,539,312"/>
+<area shape="rect" id="node5" href="$a00021.html" title="Thrown when the input to the web service call has invalid data or fails validations." alt="" coords="564,205,1084,312"/>
+<area shape="rect" id="node7" href="$a00022.html" title="This is the general exception class for web services." alt="" coords="1108,205,1537,312"/>
+</map>

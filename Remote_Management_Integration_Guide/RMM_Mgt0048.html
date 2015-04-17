@@ -1,0 +1,454 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Client events</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66552435">
+<META name="CONTENT_SOURCE_REVISION" content="02132012135603">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66552435"></a>Client events</h2></div></div></div>
+<p><a name="v66552439"></a>The following events are logged on the client and supported in this release of Symantec Endpoint Protection. They are written to a custom target log for easier management (log retention, configuration, etc).</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v66779582"></a>The first 17 events in this list (marked with an asterisk, *) are also logged in the Application Target Log, Event Source Symantec AntiVirus, for backward compatibility with earlier versions of the product. The only exceptions are events 13 and 14, which are logged to the application log only. We recommend that you monitor services directly. See <a href="RMM_Mgt0051.html" title="Services running on the client and the server">Services running on the client and the server</a>.</p></td>
+</tr></table></div>
+<div class="table">
+<a name="v66778642"></a><p class="title">Table: </p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66778652"></a><p>Event Source</p>
+</th>
+<th><p>Category</p></th>
+<th><p>EventID</p></th>
+<th><p>Type</p></th>
+<th><p>Target Log</p></th>
+<th><p>Message Text</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66778662"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>2*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Scan Complete: [scan details].</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778663"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>3*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Scan started on [scan details determined by policy].</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778664"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>7*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td>
+<p>New virus definition file loaded. Version: [version number]</p>
+<p>Previous virus definition file loaded. Version: [version number]</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66778665"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>13</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection services shutdown was successful. (Application log only)</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778666"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>14</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection services startup was successful. (Application log only)</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778667"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>21*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Scan Failure: [details of error encountered].</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778668"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>22*</p></td>
+<td><p>Warning</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Occurs when Auto-Protect fails to load.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778669"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>23*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection Auto-Protect Enabled.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778670"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>24*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection Auto-Protect Disabled.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778671"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>40*</p></td>
+<td><p>Error</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Occurs when a computer is not protected with definitions.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778672"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>45*</p></td>
+<td><p>Error</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>SYMANTEC TAMPER PROTECTION ALERT Target: [details], Event Info: [details], ActionTaken: [details], Actor Process [details], Time: [timestamp].</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778673"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>51*</p></td>
+<td><p>Error</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>[threat detected] [threat details] [protection technology that found the threat: Auto-Protect (includes Download Insight) or SONAR] [action taken on the threat] [action succeeded or failed] [additional threat details]</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778674"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>34053*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Proactive Threat Protection (SONAR) is disabled.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778675"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>None</p></td>
+<td><p>34054*</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>SONAR has been enabled.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778676"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Connectivity</p></td>
+<td><p>100</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection is online and reporting to the management server.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778677"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Connectivity</p></td>
+<td><p>101</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection cannot communicate with the management server.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778678"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Connectivity</p></td>
+<td><p>102</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td><p>Symantec Endpoint Protection client is self-managed.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66778654"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Content</p></td>
+<td><p>200</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td>
+<p>[prefix:] Updated content was successfully downloaded.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66778656"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Content</p></td>
+<td><p>201</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td>
+<p>[prefix:] Updated content could not be downloaded.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66778658"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Content</p></td>
+<td><p>202</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td>
+<p>[prefix:] Updated content was successfully installed.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66778660"></a><p>Symantec Endpoint Protection Client</p>
+</td>
+<td><p>Content</p></td>
+<td><p>203</p></td>
+<td><p>Warning</p></td>
+<td><p>Symantec Endpoint Protection Client</p></td>
+<td>
+<p>[prefix:] Updated content could not be installed.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v66783767"></a>The content message text field contains the following subfields, in addition to the message text prefix that is specific to each eventID. Only the relevant subfields are written to the message text. For example, the source is written only to events that log download success or failure. </p>
+<div class="table">
+<a name="v66783768"></a><p class="title">Table: Content message text details</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Content message text details" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66783774"></a><p>Subfield label</p>
+</th>
+<th><p>Subfield description</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66783776"></a><p>Product</p>
+</td>
+<td>
+<p>Symantec product (content type) registered with LiveUpdate.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">This is the subfield that you must monitor to determine whether content is up to date on the server.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66783777"></a><p>Version</p>
+</td>
+<td><p>The version number of the content type specified in the <span class="guimenuitem">Product</span> subfield.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783778"></a><p>Language</p>
+</td>
+<td><p>The language in which the specified content type is published.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783779"></a><p>Monikers</p>
+</td>
+<td><p>Server monikers, comma-separated</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783780"></a><p>Sequence</p>
+</td>
+<td><p>Raw revision sequence</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783781"></a><p>PublishDate</p>
+</td>
+<td><p>The date that this content type was published, in UTC complete date format.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783782"></a><p>Revision</p>
+</td>
+<td><p>[int]</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783783"></a><p>Size (in bytes)</p>
+</td>
+<td><p>The size of the content package, in bytes (per content type)</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66783784"></a><p>Source</p>
+</td>
+<td>
+<p>The source from which the client downloaded the specified content type (ENUM). Options are:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>1 = publicLU</p>
+<p>Public (Symantec) LiveUpdate server</p>
+</li>
+<li>
+<p>2 = privateLU</p>
+<p>LiveUpdate server installed on a customer's internal network. This type of LiveUpdate server is configured by using the LiveUpdate Administration utility.</p>
+</li>
+<li>
+<p>3 = localInstall</p>
+<p>Direct drop of content update (definitions) file (.vdb or .jdb) onto the client</p>
+</li>
+<li>
+<p>4 = SEPServer</p>
+<p>The management server, if it is configured to provide updated content to its clients</p>
+</li>
+<li>
+<p>5  = GUP</p>
+<p>A Group Update Provider (GUP) is a client that is designated to provide updates to other clients in a local network.</p>
+</li>
+</ul></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

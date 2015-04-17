@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Monitoring the management server</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66564454">
+<META name="CONTENT_SOURCE_REVISION" content="03142012150024">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66564454"></a>Monitoring the management server</h2></div></div></div>
+<p><a name="v66564531"></a>We recommend that you monitor a relatively small set of key services and events on the management server.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v66755431"></a>All threshold values are recommendations only. You can adjust these values to fit the standards of your platform.</p></td>
+</tr></table></div>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v72972667"></a>Make sure to provide some kind of mechanism for your customers to provide a customized port number if they did not use the default value.</p></td>
+</tr></table></div>
+<p><a name="v66757111"></a>See <a href="RMM_Mgt0044.html" title="Monitoring license state on the management server">Monitoring license state on the management server</a>.</p>
+<p><a name="v69805225"></a>See <a href="RMM_Mgt0046.html" title="Server monitoring examples">Server monitoring examples</a>.</p>
+<p><a name="v70698342"></a>See <a href="RMM_Mgt0051.html" title="Services running on the client and the server">Services running on the client and the server</a>.</p>
+<div class="table">
+<a name="v66565584"></a><p class="title">Table: Monitoring the management server</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Monitoring the management server" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66565591"></a><p>Data point</p>
+</th>
+<th><p>Data point description</p></th>
+<th><p>How to retrieve the data</p></th>
+<th><p>Notes</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66565593"></a><p>Server Status</p>
+</td>
+<td><p>The status of the main service that runs on the management server.</p></td>
+<td><p>Use WMI to check whether the <span class="guilabel">semwebsrv</span> service is running on the management server.</p></td>
+<td><p>The <span class="guilabel">Symantec Endpoint Protection Manager</span> service also runs on the management server, but the Webserver service starts and stops both services, so it is a more reliable indicator of server status.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66565735"></a><p>Link to server console</p>
+</td>
+<td><p>A direct link to the Symantec Endpoint Protection management server</p></td>
+<td>
+<p>Default URL is </p>
+<p>https://​&lt;serverIP&gt;:8443/​​console/apps/sepm</p>
+</td>
+<td>
+<p>If the server port was customized during installation of the management server, change the port in this URL accordingly.</p>
+<p>The console provides direct remediation for any issues reported by the RMM tool on the server or the client.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66565736"></a><p>Management server version</p>
+</td>
+<td><p>Version number of the installed server</p></td>
+<td><p>Use your standard mechanism for detecting software version numbers. The product name is <span class="guilabel">Symantec Endpoint Protection Manager</span>.</p></td>
+<td>
+<p>The version number is a four-part string, such as 12.1.1047.347.</p>
+<p>A VisualBasic script is provided, as an example only.</p>
+<p>See <a href="RMM_Mgt0043.html" title="VisualBasic script to detect management server version">VisualBasic script to detect management server version</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66565738"></a><p>Database status</p>
+</td>
+<td><p>The status of the database process for the management server</p></td>
+<td>
+<p>For the embedded database:</p>
+<p>Use WMI to check whether the <span class="guilabel">SQLANYs_sem5</span> service is running.</p>
+<p>For a SQL Server database:</p>
+<p>You must configure the SQL Server database separately.</p>
+</td>
+<td><p>It is up to you to determine the details for monitoring the SQL Server database.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66565595"></a><p>Content update status on the server</p>
+</td>
+<td><p>The status of the different Symantec Endpoint Protection content types on the management server</p></td>
+<td>
+<p>Monitor the  most recent events from the Windows Event Log, log name <span class="guilabel">Symantec Endpoint Protection Manager</span>, category Content, in the eventID range 7201 to 7203.</p>
+<p>If the most recent eventID == 7202, then the content on the server is up-to-date.</p>
+<p>If the most recent eventID == 7201 or 7203, then the content is out-of-date.</p>
+</td>
+<td>
+<p>Content status events on the server monitor download and installation success and failure. Content can be up to date only if both download and installation succeed. Installation cannot succeed if download fails, so there is no need to monitor download success directly (eventID 7200).</p>
+<p>See <a href="RMM_Mgt0049.html" title="Content revision state events on the management server">Content revision state events on the management server</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Assigning policies to clients</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v75140056">
+<META name="CONTENT_SOURCE_REVISION" content="08102012140400">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v75140056"></a>Assigning policies to clients</h2></div></div></div>
+<p><a name="v75140074"></a>Symantec Endpoint Protection policies are assigned to groups of clients. A group can inherit its policies from a parent group. By default, all groups inherit policies from the root group that is created when Symantec Endpoint Protection Manager is installed. If you try to assign a policy to a group that inherits its policies from a parent, the policy assignment fails. Policy inheritance is enabled or disabled on a group in the Symantec Endpoint Protection Manager console.</p>
+<p><a name="v78510778"></a>Remote management of Symantec Endpoint Protection policies by means of web service calls provides the following functionality:</p>
+<div class="itemizedlist">
+<a name="v75158947"></a><ul type="disc">
+<li>
+<p><a name="v75158948"></a><a name="v75158949"></a>Import a policy to a Symantec Endpoint Protection Manager site.</p>
+<p><a name="v75158950"></a>The policy must first be exported by using the Symantec Endpoint Protection Manager console. After the policy is exported, web service calls can be used to import the policy to any other management sites in a customer's network.</p>
+</li>
+<li><p><a name="v75158951"></a><a name="v75158952"></a>Assign a policy to a specified group. If the policy already exists in the local Symantec Endpoint Protection Manager policy library, it does not need to be exported or imported.</p></li>
+</ul>
+</div>
+<p><a name="v75158955"></a>Changes to policy settings must be made in the Symantec Endpoint Protection Manager console.</p>
+<p><a name="v78510577"></a>See <a href="RMM_Mgt0028.html" title="Managing the Symantec Endpoint Protection client with web services">Managing the Symantec Endpoint Protection client with web services</a>.</p>
+</div>
+</body>
+</html>

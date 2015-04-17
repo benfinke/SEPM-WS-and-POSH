@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Client commands reference</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v75140246">
+<META name="CONTENT_SOURCE_REVISION" content="08092012124331">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v75140246"></a>Client commands reference</h2></div></div></div>
+<p><a name="v75140292"></a>The following commands can be issued to the Symantec Endpoint Protection client to remediate issues that are detected while monitoring the network. See <a href="RMM_Mgt0039.html" title="Monitoring client state and activity">Monitoring client state and activity</a>.</p>
+<p><a name="v78510250"></a>If you are a developer of a third-party remote management application, you may want to take some of this information into account as you design your user interface, or you may want to provide it to your customers.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v78510575"></a>Commands to disable individual technologies include a timeout parameter. After the timeout interval, the technology returns to the state that it was in before the command was issued. For more information, see the Reference Guide.</p></td>
+</tr></table></div>
+<p><a name="v75158536"></a>For more information about client commands and about the protection technologies that they manage, see the Symantec Endpoint Protection documentation. </p>
+<div class="table">
+<a name="v75140293"></a><p class="title">Table: Client commands</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Client commands" cellpadding="5" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v75140300"></a><p>Command</p>
+</th>
+<th><p>Definition</p></th>
+<th><p>When and how to use</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v75140302"></a><p>Scan</p>
+</td>
+<td>
+<p>Scan the client computer, list of clients, or group of clients for threats or risks. You also specify the scan type: Active, Full, or Custom.</p>
+<p>A custom scan must be defined in the Symantec Endpoint Protection Manager console.</p>
+</td>
+<td><p>If the client(s) report Infected but Up to date.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v75140303"></a><p>Update Content</p>
+</td>
+<td><p>Run LiveUpdate on the client(s).</p></td>
+<td><p>If you want to update content on the client without running a scan at the same time</p></td>
+</tr>
+<tr>
+<td>
+<a name="v75140304"></a><p>Update Content and Scan</p>
+</td>
+<td><p>Run LiveUpdate on the client(s) and then scan to check for any new risks.</p></td>
+<td><p>If the client(s) report Infected and you are not certain that the client has the latest content.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v75140306"></a><p>Enable Auto-Protect</p>
+</td>
+<td>
+<p>Enables Auto-Protect for the file system on the client(s)</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">Does not affect Auto-Protect for email.</p></td>
+</tr></table></div>
+</td>
+<td>
+<p>If you let endpoint users disable Auto-Protect, or if you needed to disable it temporarily by policy from the management console.</p>
+<p>There is no corresponding command to disable Auto-Protect because it should remain enabled most of the time. See <a href="RMM_Mgt0005.html" title="About Symantec Endpoint Protection">About Symantec Endpoint Protection</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v75140307"></a><p>Enable Network Threat Protection and Disable Network Threat Protection</p>
+</td>
+<td><p>Enables or disables the firewall and intrusion prevention features on the client(s).</p></td>
+<td>
+<p>Network Threat Protection is designed to be compatible with most applications that use the network. On rare occasions, however, you may need to disable these technologies temporarily.</p>
+<p>You enable Network Threat Protection if users have disabled it or after the requirements for which you disabled it are met.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v75140309"></a><p>Enable Download Insight and Disable Download Insight</p>
+</td>
+<td><p>Enables or disables download blocking based on file reputation</p></td>
+<td>
+<p>You may rarely need to disable Download Insight temporarily. </p>
+<p>You enable Download Insight if users have disabled it or after the requirements for which you disabled it are met.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v75158540"></a>See <a href="RMM_Mgt0029.html" title="Running commands on clients">Running commands on clients</a>.</p>
+</div>
+</body>
+</html>

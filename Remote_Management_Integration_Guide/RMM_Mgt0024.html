@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Using the sample PowerShell scripts</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v77097730">
+<META name="CONTENT_SOURCE_REVISION" content="08102012144331">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v77097730"></a>Using the sample PowerShell scripts</h2></div></div></div>
+<p><a name="v77136598"></a>The sample PowerShell scripts that are provided in this SDK are intended only to help you get started. They are not intended to provide a complete web services client that you can use out of the box. They are located in the following folder:</p>
+<p><a name="v78089925"></a><code class="filename">..\SEPM_WebService_SDK\SampleCode\PowerShell\</code></p>
+<div class="itemizedlist">
+<a name="v77136599"></a><p class="title">Prerequisites</p>
+<ul type="disc">
+<li><p><a name="v77136602"></a><a name="v77136603"></a>PowerShell 2.0 or later, run as Administrator</p></li>
+<li>
+<p><a name="v77501139"></a><a name="v77501140"></a>Client ID and client secret obtained from Symantec Endpoint Protection Manager</p>
+<p><a name="v77501141"></a>See <a href="RMM_Mgt0013.html" title="Registering an application with Symantec Endpoint Protection Manager">Registering an application with Symantec Endpoint Protection Manager</a>.</p>
+</li>
+</ul>
+</div>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v78089757"></a>These scripts are not signed. To run them, you must enable unsigned scripts.</p></td>
+</tr></table></div>
+<p><a name="v77501595"></a>If you run the scripts against a remote Symantec Endpoint Protection Manager server, edit the configuration file (<code class="filename">config.xml</code>) to provide the hostname and web services port of the Symantec Endpoint Protection Manager instance. If you run the scripts locally, and if you installed Symantec Endpoint Protection Manager with the default values, you can skip this step.</p>
+<p><a name="v78529751"></a>If you run the scripts against a remote Symantec Endpoint Protection Manager server, you must also edit the WSDL files to provide the hostname and web services port of the Symantec Endpoint Protection Manager instance. See <a href="RMM_Mgt0021.html" title="Static WSDL files">Static WSDL files</a>.</p>
+<p><a name="v78529710"></a>Edit the configuration file (<code class="filename">config.xml</code>) to replace the example client ID and client secret with the values that you obtained. This file is parsed by all the other sample scripts. If you encounter problems with your web services connection or with authentication, check this file first to make sure that you have the correct values.</p>
+<div class="table">
+<a name="v77501596"></a><p class="title">Table: PowerShell scripts</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="PowerShell scripts" cellpadding="5" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v77501603"></a><p>File name</p>
+</th>
+<th><p>Description</p></th>
+<th><p>Notes</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v78529711"></a><p><code class="filename">Write-AccessTokenToConfig.ps1</code></p>
+</td>
+<td><p>Provides an example of how to obtains an OAuth access token for a web services client application, and writes the token to <code class="filename">Config.xml</code>.</p></td>
+<td>
+<p>Run this script first to obtain the access token that is required by all web service calls.</p>
+<p>See <a href="RMM_Mgt0012.html" title="Using OAuth with Symantec Endpoint Protection Manager web services">Using OAuth with Symantec Endpoint Protection Manager web services</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v77501605"></a><p><code class="filename">GetSepmRmmWsAccessToken.ps1</code></p>
+</td>
+<td><p>Provides an example of how to obtains an OAuth access token manually for a web services client application</p></td>
+<td><p>We recommend that you use Write-AccessTokenToConfig.ps1. If you run this script, you must manually add the access token to <code class="filename">Config.xml</code>.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v77501606"></a><p><code class="filename">Get-SepmRmmWebService.ps1</code></p>
+</td>
+<td><p>Provides an example of how to create a PowerShell interface for the web services</p></td>
+<td><p> </p></td>
+</tr>
+<tr>
+<td>
+<a name="v77501607"></a><p><code class="filename">ConvertFrom-JSON.ps1</code></p>
+</td>
+<td>
+<p>Provides an example of how to convert a JSON object to a PowerShell object</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">Called by <code class="filename">GetSepmRmmWsAccessToken.ps1</code></p></td>
+</tr></table></div>
+</td>
+<td>
+<p>Access tokens are provided as JSON objects.</p>
+<p>See <a href="RMM_Mgt0015.html" title="Getting an OAuth access token from the authorization code">Getting an OAuth access token from the authorization code</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v77501609"></a><p><code class="filename">ClientServiceTest.ps1</code></p>
+</td>
+<td><p>Provides an example of how to obtain lists of Symantec Endpoint Protection clients or groups of clients</p></td>
+<td>
+<p>The client lists that are provided by the ClientService web service are used as input parameters to the methods of the <code class="filename">CommandService</code> web service.</p>
+<p>Group IDs are used as input parameters to the methods of the <code class="filename">PolicyService</code> web service. </p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v77501610"></a><p><code class="filename">CommandServiceTest.ps1</code></p>
+</td>
+<td><p>Provides an example of how to send commands to a list of clients or groups and get the status of the command that was sent</p></td>
+<td><p>See <a href="RMM_Mgt0029.html" title="Running commands on clients">Running commands on clients</a>.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v77502390"></a><p><code class="filename">LicenseServiceTest.ps1</code></p>
+</td>
+<td><p>Provides an example of how to retrieve the status of license information</p></td>
+<td><p>See <a href="RMM_Mgt0036.html" title="License reporting">License reporting</a>.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v77502391"></a><p><code class="filename">LiveUpdateServiceTest.ps1</code></p>
+</td>
+<td><p>Provides an example of how to run LiveUpdate and get the status of LiveUpdate content  on  the Symantec Endpoint Protection Manager server</p></td>
+<td>
+<p>See <a href="RMM_Mgt0034.html" title="Running LiveUpdate on the server">Running LiveUpdate on the server</a>.</p>
+<p>See <a href="RMM_Mgt0035.html" title="Checking content from LiveUpdate on the server">Checking content from LiveUpdate on the server</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v77502392"></a><p><code class="filename">PolicyServiceTest.ps1</code></p>
+</td>
+<td><p>Provides information about how to assign policies to lists of client groups</p></td>
+<td><p>See <a href="RMM_Mgt0030.html" title="Assigning policies to clients">Assigning policies to clients</a>.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v77502410"></a>For more information about the methods that are provided by each web service, see the Reference Guide.</p>
+<p><a name="v77502430"></a>See <a href="RMM_Mgt0023.html" title="Constructing a web services client application from the WSDL files">Constructing a web services client application from the WSDL files</a>.</p>
+<p><a name="v77502432"></a>See <a href="RMM_Mgt0008.html" title="Creating a web services client application">Creating a web services client application</a>.</p>
+</div>
+</body>
+</html>

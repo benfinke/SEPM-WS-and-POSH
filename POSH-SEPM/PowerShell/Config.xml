@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file contains general settings for the PowerShell web service test scripts.
+Modify these values to match your server settings.-->
+<SepmWS>
+  <!--Ip address of the server-->
+  <HostName>127.0.0.1</HostName>
+  <!--Name of the Symantec Endpoint Protection Manager server-->
+  <ServerName>SEPM</ServerName>
+  <!--Web services port, default: 8446-->
+  <PortNo>8446</PortNo>
+  <!--Directory containing static WSDL files. These scripts do not support dynamic WSDLs-->
+  <wsdlDir>..\..\WSDL</wsdlDir>
+  <!--Client Id of registered web services client-->
+  <ClientId>00000000-0000-0000-0000-000000000000</ClientId>
+  <!--Client secret of registered web services client-->
+  <ClientSecret>00000000-0000-0000-0000-000000000000</ClientSecret>
+  <!--Access token obtained from server. Run Write-TokenToConfig.ps1 to obtain, or call Get-SepmRmmWsAccessToken-->
+  <AccessToken>00000000-0000-0000-0000-000000000000</AccessToken>
+</SepmWS>

@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>About Symantec Endpoint Protection</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66778082">
+<META name="CONTENT_SOURCE_REVISION" content="08022012142657">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66778082"></a>About Symantec Endpoint Protection</h2></div></div></div>
+<p><a name="v66778605"></a>This topic is intended for developers of remote monitoring and management solutions who are not familiar with Symantec Endpoint Protection. It provides a very basic summary of the following aspects of the product:</p>
+<div class="itemizedlist">
+<a name="v66778610"></a><ul type="disc">
+<li><p><a name="v66778611"></a><a name="v66778612"></a>Client functionality</p></li>
+<li><p><a name="v66778613"></a><a name="v66778614"></a>Client-server communication</p></li>
+<li><p><a name="v66778615"></a><a name="v66778616"></a>Server functionality</p></li>
+</ul>
+</div>
+<p><a name="v66778617"></a>The Symantec Endpoint Protection client provides the following protection technologies. For more detailed information, see the Symantec Endpoint Protection documentation.</p>
+<p><a name="v66890797"></a>We recommend that you monitor other aspects of client behavior in addition to these technologies. You can monitor whether the Symantec Endpoint Protection client is installed, whether the client is checking in with the management server, or whether the client is managed by the management server.</p>
+<p><a name="v71629299"></a>Only Symantec Endpoint Protection version 12.1.11xx or later (client and management server) supports all the monitoring features described in this documentation.</p>
+<p><a name="v66890250"></a>See <a href="RMM_Mgt0039.html" title="Monitoring client state and activity">Monitoring client state and activity</a>.</p>
+<div class="table">
+<a name="v66890252"></a><p class="title">Table: Client protection technologies</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Client protection technologies" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66890259"></a><p>Type of protection</p>
+</th>
+<th><p>Protection component and how it works</p></th>
+<th><p>How component is managed</p></th>
+<th><p>How to monitor</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66890261"></a><p>Virus and Spyware Protection</p>
+<p>Protects against viruses, malware, and spyware</p>
+</td>
+<td>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>Scheduled and on-demand scans</p>
+<p>These scans run on all system files unless otherwise specified.</p>
+</li>
+<li>
+<p>Auto-Protect</p>
+<p>These scans provide real-time scanning of files, folders, and resources as they are accessed on the client computer.</p>
+</li>
+<li>
+<p>Download Insight</p>
+<p>Blocks suspicious downloads from the Internet</p>
+</li>
+</ul></div>
+<p>Virus and Spyware components all rely on lists of known threats.</p>
+</td>
+<td><div class="itemizedlist"><ul type="disc">
+<li><p>At least one default scheduled scan always runs, and cannot be disabled. Additional scheduled scans can be added by the administrator or by the client user if the administrator allows it. </p></li>
+<li><p>Auto-Protect can be disabled by the administrator or by the client user if the administrator allows it. If Auto-Protect is disabled, Download Insight is also disabled.</p></li>
+<li><p>Download Insight can be disabled separately from Auto-Protect.</p></li>
+<li><p>You can run commands on the client to enable or disable some protection technologies, or to remediate infected or at risk states. See <a href="RMM_Mgt0029.html" title="Running commands on clients">Running commands on clients</a>.</p></li>
+</ul></div></td>
+<td>
+<p>You can monitor the <span class="guilabel">Infected</span> OpState registry key for infection state.</p>
+<p>You can monitor the <span class="guilabel">AVRunningStatus</span> OpState registry key for whether these technologies are enabled. If Download Insight is disabled but Auto-Protect is enabled, the registry key value does not change.</p>
+<p>For detailed information about threats that these technologies detect, you can also review the event log for eventID 51. This event also logs threats that are detected by SONAR. See <a href="RMM_Mgt0048.html" title="Client events">Client events</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66890263"></a><p>Proactive Threat Protection</p>
+<p>Provides zero-day protection against unknown threats</p>
+</td>
+<td>
+<p>SONAR</p>
+<p>SONAR relies on heuristic analysis of running processes on the client. It provides behavioral analysis to predict risks, unlike the virus protection technologies that catch known threats.</p>
+</td>
+<td><p>SONAR can be disabled by the administrator or by the client user if the administrator allows it.</p></td>
+<td><p>You can review the event log for eventIDs 34053 (SONAR disabled) and 34054 (SONAR enabled). Because SONAR is predictive, however, monitoring these events may not be as useful as monitoring Virus and Spyware Protection.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66890791"></a><p>Network Threat Protection</p>
+<p>Protects against Web and network threats</p>
+</td>
+<td>
+<p>Firewall</p>
+<p>Network Intrusion Prevention</p>
+<p>Browser Intrusion Prevention</p>
+</td>
+<td>
+<p>All of these components can be disabled separately by the administrator or by the client user if the administrator allows it. Only the firewall writes to the registry, however.</p>
+<p>See <a href="RMM_Mgt0029.html" title="Running commands on clients">Running commands on clients</a>.</p>
+</td>
+<td>
+<p>You can monitor the <span class="guilabel">FWRunningStatus</span> OpState registry key for whether these technologies are enabled.</p>
+<p>Typically if an administrator or a client user disables this type of protection, they disable all of Network Threat Protection, not just a single component (Firewall or Intrusion Prevention). Monitoring only the <span class="guilabel">FWRunningStatus</span> registry key is therefore sufficient.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66890792"></a><p>Network Access Control</p>
+<p>Monitors and enforces compliance with security settings</p>
+</td>
+<td><p>N/A</p></td>
+<td><p> </p></td>
+<td><p>You can monitor only the Symantec Network Access Control service on the client and the state of  Symantec Network Access Control licenses on the management server.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66890793"></a><p>LiveUpdate</p>
+<p>Provides regular updates to the product software and to content  -  definitions, signatures, lists, reputation data, and more.</p>
+</td>
+<td>
+<p>LiveUpdate</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote">
+<p class="first-admon">LiveUpdate can be configured to provide updates from a number of different sources.</p>
+<p>See <a href="RMM_Mgt0049.html" title="Content revision state events on the management server">Content revision state events on the management server</a>.</p>
+</td>
+</tr></table></div>
+</td>
+<td><p> </p></td>
+<td>
+<p>You can calculate a threshold date for out of date content and compare this date to the date in the LatestVirusDefsDate registry key.</p>
+<p>You can monitor Content events on the client and the server.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v67031473"></a>Client-server communication is established by means of a sylink.xml file on the client. This file includes the IP address of the management server that the client reports to, and the domain name if applicable. It also includes the certificates that the client needs for secure communication with the server.</p>
+<p><a name="v67038299"></a>The Symantec Endpoint Protection management server provides a full range of reporting, policy management, client management, and network management functions. Most of these functions offer a level of detail that is best monitored directly in the Symantec Endpoint Protection management console. Some basic functionality can be monitored remotely, however.</p>
+<p><a name="v67038344"></a>See <a href="RMM_Mgt0042.html" title="Monitoring the management server">Monitoring the management server</a>.</p>
+<p><a name="v78088786"></a>See <a href="RMM_Mgt0033.html" title="Managing Symantec Endpoint Protection Manager with web services">Managing Symantec Endpoint Protection Manager with web services</a>.</p>
+</div>
+</body>
+</html>

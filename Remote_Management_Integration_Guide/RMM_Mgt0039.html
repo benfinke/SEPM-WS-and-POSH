@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Monitoring client state and activity</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v64382553">
+<META name="CONTENT_SOURCE_REVISION" content="08022012143320">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v64382553"></a>Monitoring client state and activity</h2></div></div></div>
+<p><a name="v64382555"></a>You can write calls to the Windows Event Log or to the Symantec public registry key location to monitor any supported Symantec Endpoint Protection logging. This topic provides a verbose English description of the basic client data that is recommended for monitoring. The retrieval details are documented in script snippets.</p>
+<p><a name="v67031410"></a>See <a href="RMM_Mgt0040.html" title="Client monitoring examples">Client monitoring examples</a>.</p>
+<p><a name="v66552675"></a>Most of the client monitoring that is recommended here is operational state, and is therefore implemented by monitoring the registry. All supported registry subkeys are located under the registry key <span class="guilabel">HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</span>.</p>
+<p><a name="v64393676"></a>See <a href="RMM_Mgt0052.html" title="Operational state reference">Operational state reference</a>.</p>
+<p><a name="v66552676"></a>Additional events are logged in the Windows Event Log that let you extend client monitoring beyond what is recommended here.</p>
+<p><a name="v66552677"></a>See <a href="RMM_Mgt0048.html" title="Client events">Client events</a>.</p>
+<p><a name="v78088978"></a>To remediate any infected or at risk endpoints, you can run commands on the endpoints by using a web services client application.</p>
+<p><a name="v78088979"></a>See <a href="RMM_Mgt0029.html" title="Running commands on clients">Running commands on clients</a>.</p>
+<p><a name="v67031446"></a>The first table below describes calls to endpoint state on individual clients. Some of these calls are useful to roll up  for summary network status information, but others require additional calculations to provide meaningful reporting.</p>
+<div class="table">
+<a name="v64391612"></a><p class="title">Table: Simple client  monitoring (single condition only)</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Simple client  monitoring (single condition only)" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v64391621"></a><p>Client state or datum</p>
+</th>
+<th><p>Description</p></th>
+<th><p>How to monitor</p></th>
+<th><p>Notes</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v64391623"></a><p>Infected</p>
+</td>
+<td><p>The endpoint is infected with one or more threats that were detected by Virus and Spyware Protection.</p></td>
+<td>
+<p>Monitor the <span class="guilabel">Infected</span> registry subkey.</p>
+<p>Key value == 1 means the client is infected.</p>
+<p>Key value == 0 means the client is not infected.</p>
+</td>
+<td>
+<p>An infected endpoint may be up-to-date or out-of-date. Remediation steps are the same in either case.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">Infected state is not reported on an endpoint  that reports only threats detected by Network Threat Protection.</p></td>
+</tr></table></div>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">This key is not created until after the client runs a scan for the first time.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v67031413"></a><p>Up-to-date</p>
+</td>
+<td><p>The endpoint has current virus definitions and other product content.</p></td>
+<td>
+<p>Subtract 3 days from today's date, in PDT to get the threshold date. If today is 27-Sep-2011, the threshold date is 24-Sep-2011.</p>
+<p>If  the value of the <span class="guilabel">LatestVirusDefsDate</span>  subkey is greater than the threshold date, then the endpoint is up-to-date.</p>
+</td>
+<td>
+<p>We recommend that you use this call only to report on individual client state.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><span class="guilabel"> LatestVirusDefsDate</span> is the date that is stamped into the set of virus definitions. It is not the date when the definitions were received by the endpoint. It is possible that the definition date may be earlier than the current date on the endpoint, for example if the endpoint is in the eastern hemisphere and the virus definitions are published late in the day in California.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v67031447"></a><p>Out-of-date</p>
+</td>
+<td><p>The endpoint does not have current virus definitions and other product content.</p></td>
+<td><p>See the up-to-date description. If the value of the <span class="guilabel">LatestVirusDefsDate</span>  subkey is less than or equal to the threshold date, then the endpoint is out-of-date.</p></td>
+<td><p>We recommend that you use this call only to report on individual client state. For the out-of-date roll-up call, see the table of complex conditions below.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69553658"></a><p>Last scan time</p>
+</td>
+<td><p>The last time a scheduled scan or an on-demand scan for infections or risks was run on the endpoint </p></td>
+<td><p>Monitor the most recent events from the Windows Event Log, log name <span class="guilabel">Symantec Endpoint Protection Client</span>, eventID 2. Get the value of the <i class="citetitle">TimeWritten</i>   property from the most recent event in the list.</p></td>
+<td><p> </p></td>
+</tr>
+<tr>
+<td>
+<a name="v64391626"></a><p>Disabled</p>
+</td>
+<td><p>The endpoint has protection technologies disabled.</p></td>
+<td>
+<p>Monitor the <span class="guilabel">AVRunningStatus</span>   subkey and the <span class="guilabel">FWRunningStatus</span> subkey.</p>
+<p>If either subkey value == 2, then client protection is disabled.</p>
+<p>If both subkey values == 1, then client protection is enabled.</p>
+</td>
+<td>
+<p>Protection can be disabled on the management server or on the client if the policy allows it. Disabled protection may not be an at-risk state, depending on the individual client or on network policies.</p>
+<p>Multiple protection technologies write to these keys. See <a href="RMM_Mgt0005.html" title="About Symantec Endpoint Protection">About Symantec Endpoint Protection</a>.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">Client protection is typically disabled for short periods of time, to permit legitimate client activity that would otherwise be blocked or slowed. It is generally not appropriate to report on disabled clients as unprotected.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v67031450"></a><p>Endpoint checking in/not checking in with management server</p>
+</td>
+<td><p>Endpoint that is connected to the Symantec Endpoint Protection management server or not checking in with the server</p></td>
+<td>
+<p>Monitor the most recent events from the Windows Event Log, log name <span class="guilabel">Symantec Endpoint Protection Client</span>, category Connectivity (eventID range 100 to 101).</p>
+<p>If the most recent eventID ==  100, then the client is online and reporting to the management server.</p>
+<p>If the most recent eventID == 101, then the client cannot communicate with the management server.</p>
+</td>
+<td><p>Endpoints that are not checking in with the management server may not be at risk, particularly if they are roaming laptops.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v64391628"></a><p>Self-managed</p>
+</td>
+<td><p>Endpoint that is not managed by the Symantec Endpoint Protection management server</p></td>
+<td><p>Monitor the <span class="guilabel">LastServerIP</span> subkey. If the subkey value is blank, or if the subkey is missing, then the client is self-managed.</p></td>
+<td>
+<p>A self-managed client may or may not be at risk.</p>
+<p>A self-managed state can occur if the client is installed by using the product disc. In this case, a customer would want to remediate.</p>
+<p>In other cases, however, a self-managed state may be perfectly safe, and no remediation is required.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66894272"></a><p>Client version number</p>
+<p>OR</p>
+<p>Client not installed</p>
+</td>
+<td><p>The version number of the Symantec Endpoint Protection client that is installed on the endpoint, or an uninstalled state</p></td>
+<td>
+<p>For a client that fully supports remote monitoring, look up the value of  the <span class="guilabel">DeployRunningVersion</span> subkey.</p>
+<p>If this lookup fails, check for earlier client versions by looking up the value of  this subkey under the registry key <span class="guilabel">HKEY_LOCAL_MACHINE\​SOFTWARE\​Symantec\​Symantec Endpoint Protection\​SMC\​SYLINK\​SyLink\OpState\</span>.</p>
+</td>
+<td>
+<p>If neither subkey exists, then the client is not installed.</p>
+<p>The version number is a four-part string, such as 12.1.1047.347.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v67031391"></a>The following data points are recommended for summary monitoring of network health. Refer to the previous table and to the script snippets for details.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v69553611"></a>Roll-up calculations for healthy endpoints and out-of-date endpoints are slightly different from the calculations for individual endpoints.</p></td>
+</tr></table></div>
+<div class="table">
+<a name="v67026925"></a><p class="title">Table: Summary (roll-up) client monitoring (overall network health)</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Summary (roll-up) client monitoring (overall network health)" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v67026933"></a><p>Data point</p>
+</th>
+<th><p>Data point description</p></th>
+<th><p>How to monitor</p></th>
+<th><p>Notes</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v67026935"></a><p>Healthy endpoints</p>
+</td>
+<td><p>Total number of endpoints not infected and with current content (virus definitions and other client protection content).</p></td>
+<td><p>Check whether the endpoints are both not infected and up-to-date.</p></td>
+<td><p>This number includes only endpoints that are online (that is, reporting to the Remote Monitoring tool).</p></td>
+</tr>
+<tr>
+<td>
+<a name="v67026937"></a><p>Out-of-date endpoints</p>
+</td>
+<td><p>Total number of endpoints with out-of-date virus definitions and other client protection content.</p></td>
+<td><p>Check whether the endpoints are both out-of-date and not infected.</p></td>
+<td><p>This number explicitly excludes endpoints that are infected. It reports on endpoints that are out of date only. You may choose to monitor endpoint state differently, but if you monitor the out of date subkey only, some endpoints can be counted twice - once as infected, and once as out of date.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v67026942"></a><p>At risk endpoints</p>
+</td>
+<td><p>Rolls up the total number of  endpoints that are out-of-date, disabled, self-managed, or without protection installed.</p></td>
+<td><p>Check whether the endpoints are either out-of-date and not infected, or disabled, or self-managed, or without protection installed.</p></td>
+<td>
+<p>An endpoint can report more than one at-risk issue.</p>
+<p>This means that the total number of individual at-risk states does not necessarily equal the total number of at-risk endpoints.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

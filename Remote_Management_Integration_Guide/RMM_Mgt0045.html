@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>About Symantec Endpoint Protection licensing</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66889370">
+<META name="CONTENT_SOURCE_REVISION" content="11302011115008">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66889370"></a>About Symantec Endpoint Protection licensing</h2></div></div></div>
+<p><a name="v66889433"></a>There are three types of Symantec Endpoint Protection licenses: trial, upgrade, and purchased.</p>
+<p><a name="v66889434"></a>Trial and upgrade licenses both contain an unlimited number of seats, but they both expire after specified periods of time.</p>
+<p><a name="v66889435"></a>A purchased license is associated with a specific number of seats and expires on a specified date. Both these variables (seats and expiration date) are determined at the time of purchase.</p>
+<p><a name="v66889436"></a>The license state is maintained on the management server, not on the client. Licenses persist on the server until they are manually removed, regardless of whether they are expired.</p>
+<p><a name="v66889437"></a>License state is out of compliance only if the number of installed clients exceeds the total number of purchased seats, regardless of the number of licenses with which those seats are associated.</p>
+<p><a name="v66889438"></a>Because of this model, it is possible to read multiple apparently conflicting licensing events on the server, even though the license state is ultimately in compliance. It is therefore very important to read the timestamp of a licensing event before you read the eventID. You may see an expired trial license, for example, in the case where there are also sufficient purchased licenses for the license state to be in compliance. The latter state is written later, so only its eventID is relevant to the curernt license state.</p>
+<p><a name="v66889439"></a>See <a href="RMM_Mgt0050.html" title="Licensing events">Licensing events</a>.</p>
+<p><a name="v66889442"></a>See <a href="RMM_Mgt0044.html" title="Monitoring license state on the management server">Monitoring license state on the management server</a>.</p>
+</div>
+</body>
+</html>

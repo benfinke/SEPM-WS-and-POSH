@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>OAuth implementation reference</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v72171625">
+<META name="CONTENT_SOURCE_REVISION" content="08022012120134">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v72171625"></a>OAuth implementation reference</h2></div></div></div>
+<p><a name="v72171632"></a>The following query parameters are passed during the HTTPS flow to obtain an access token or a refresh token for web service calls.</p>
+<p><a name="v72432083"></a>See <a href="RMM_Mgt0015.html" title="Getting an OAuth access token from the authorization code">Getting an OAuth access token from the authorization code</a>.</p>
+<div class="table">
+<a name="v72380510"></a><p class="title">Table: </p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v72380516"></a><p>Parameter</p>
+</th>
+<th><p>Value</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v72380518"></a><p><span class="command">client_id</span></p>
+</td>
+<td>
+<p>The client identifier that is provided when the administrator registers the remote management application</p>
+<p>Registration is required to obtain the client_id.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v72380519"></a><p><span class="command">client_secret</span></p>
+</td>
+<td><p>The client secret that is provided when the administrator registers the remote management application</p></td>
+</tr>
+<tr>
+<td>
+<a name="v72432065"></a><p><span class="command">response_type</span></p>
+</td>
+<td><p>Must be <span class="command">code</span>.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v72380520"></a><p><span class="command">redirect_uri</span></p>
+</td>
+<td>
+<p><span class="command">https://&lt;host_name&gt;:&lt;port_number&gt;/sepm</span></p>
+<p>If you redirect to the client application, we recommend this URI.</p>
+<p>If your application redirects to a web server, for example, the server must handle the exchange with the Symantec Endpoint Protection Manager server properly.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v72380521"></a><p><span class="command">code</span></p>
+</td>
+<td><p>The authorization code that is generated by Symantec Endpoint Protection Manager when the administrator authorizes the client application to access the  web services.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v72380522"></a><p><span class="command">grant_type</span></p>
+</td>
+<td>
+<p>Must be set to <span class="command">authorization_code</span> when the first request for an access token is made</p>
+<p>Must be set to <span class="command">refresh_token</span> to request a new access token from a refresh token</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v72380523"></a><p><span class="command">access_token</span></p>
+</td>
+<td><p>The access token that was issued by Symantec Endpoint Protection Manager</p></td>
+</tr>
+<tr>
+<td>
+<a name="v72380524"></a><p><span class="command">token_type</span></p>
+</td>
+<td><p>Must be <span class="command">bearer</span></p></td>
+</tr>
+<tr>
+<td>
+<a name="v72432067"></a><p><span class="command">refresh_token</span></p>
+</td>
+<td><p>The refresh token that was issued by Symantec Endpoint Protection Manager together with the access token</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v72433763"></a>See <a href="RMM_Mgt0012.html" title="Using OAuth with Symantec Endpoint Protection Manager web services">Using OAuth with Symantec Endpoint Protection Manager web services</a>.</p>
+</div>
+</body>
+</html>

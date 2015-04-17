@@ -1,0 +1,80 @@
+/*****************************************
+*			ENTERPRISE CSS					*
+*****************************************/
+
+body
+	{ 
+	font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;
+		}
+
+span.command
+	{
+	font-family: "Courier New", Courier, mono, Gulim;
+	}
+	
+/*==========================================
+/  LIST ELEMENTS (items, titles, intro's)  /
+==========================================*/
+
+
+
+/*==========================================
+/  			HEADING & INTRO PARA'S			  /
+==========================================*/
+
+h1, h2, h3, h4, h5, h6
+	{
+  font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;
+	}
+
+div.moreinfo p.title
+	{
+    font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;     
+        }
+
+
+/*==========================================
+/      TABLES					  /
+==========================================*/
+
+table
+  {
+  font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;     
+  }
+  
+table.complex th
+ {
+  font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;
+  font-size: 12px;
+}
+
+div.complex p.title
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;
+}
+
+div.table p.title
+{
+  font-family: Verdana, Arial, Helvetica, sans-serif, Gulim;
+} 
+		
+/*==========================================
+/  				NOTES & WARNINGS				  /
+==========================================*/
+
+p.notetext{
+word-break: keep-all;	
+}
+
+/*==========================================
+/ Styles for Add Bookmark page.            /
+==========================================*/
+.bmpara {
+  font-family: Verdana, Arial, Helvetica, sans-serif, Gulim; 
+}
+
+/*==========================================
+/  				Document Defaults				  /
+==========================================*/
+
+

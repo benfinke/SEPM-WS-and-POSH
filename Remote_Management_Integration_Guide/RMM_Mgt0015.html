@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Getting an OAuth access token from the authorization code</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v72168473">
+<META name="CONTENT_SOURCE_REVISION" content="08022012140350">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v72168473"></a>Getting an OAuth access token from the authorization code</h2></div></div></div>
+<p><a name="v75108158"></a>After an administrator authorizes a web services client application, the client application does the rest of the work. First, the authorization code is exchanged for the access token.</p>
+<div class="procedure">
+<a name="v75108211"></a><p class="title">To get an OAuth access token from the authorization code</p>
+<ol type="1">
+<li>
+<a name="v75108217"></a>Parse the URI that is returned from the authorization request response to determine the authorization code. The URI looks like the following:<p><a name="v72171149"></a><span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">https://<i class="replaceable">&lt;hostname&gt;</i>:<i class="replaceable">&lt;port_number&gt;</i>/sepm?code=&lt;authorization_code_string&gt;</span></p>
+</li>
+<li>
+<a name="v75108220"></a>Exchange the authorization code for an access token by including it in a URL query parameter. The URL looks like the following:<p><a name="v72171152"></a><span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">https://<i class="replaceable">&lt;hostname&gt;</i>:<i class="replaceable">&lt;port_number&gt;</i>/sepm/oauth/token?grant_type=authorization_code&amp;client_id=<i class="replaceable">&lt;client_id&gt;</i>&amp;client_secret=<i class="replaceable">&lt;client_secret&gt;</i>&amp;redirect_uri=https://<i class="replaceable">&lt;hostname&gt;</i>:<i class="replaceable">&lt;port_number&gt;</i>/sepm&amp;code=<i class="replaceable">&lt;authorization code&gt;</i></span></p>
+<p><a name="v75109055"></a>where <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">client_id</span> and <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">client_secret</span> are the client ID and client secret that were obtained when the client application was registered with Symantec Endpoint Protection Manager.</p>
+<p><a name="v72171154"></a>The return result is a JSON formatted object that contains the following information. These details are for example only. Expiration is measured in seconds.</p>
+<a name="v72431971"></a><pre class="programlisting">token_type:    bearer
+access_token:  0798f706-0046-417c-9af0-513b8dbb1fc7
+refresh_token: b8fe1e5c-e852-4104-bb78-43dd2022f426
+expires_in:    43199
+</pre>
+</li>
+</ol>
+</div>
+<p><a name="v75108075"></a>See <a href="RMM_Mgt0016.html" title="Including the OAuth token in calls to web services">Including the OAuth token in calls to web services</a>.</p>
+<p><a name="v75108073"></a>See <a href="RMM_Mgt0012.html" title="Using OAuth with Symantec Endpoint Protection Manager web services">Using OAuth with Symantec Endpoint Protection Manager web services</a>.</p>
+<p><a name="v72168600"></a>See <a href="RMM_Mgt0011.html" title="OAuth flow">OAuth flow</a>.</p>
+<p><a name="v72434003"></a>See <a href="RMM_Mgt0018.html" title="OAuth implementation reference">OAuth implementation reference</a>.</p>
+</div>
+</body>
+</html>

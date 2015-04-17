@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Troubleshooting</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v78528657">
+<META name="CONTENT_SOURCE_REVISION" content="08132012221623">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v78528657"></a>Troubleshooting</h2></div></div></div>
+<p><a name="v78528673"></a>The following resources and descriptions of common issues may help troubleshoot issues with your web services client application.</p>
+<div class="itemizedlist">
+<a name="v78528674"></a><p class="title">Resources</p>
+<ul type="disc">
+<li>
+<p><a name="v78528676"></a><a name="v78528677"></a>Symantec Endpoint Protection Manager system audit logs</p>
+<p><a name="v78528678"></a>These logs include any changes that are made by web service calls. A log entry includes the administrator ID and identifies the source as a web service request.</p>
+</li>
+<li>
+<p><a name="v78528679"></a><a name="v78528680"></a>Debug logging</p>
+<p><a name="v78528681"></a>The <code class="filename">catalina.log</code> and <code class="filename">catalina.err</code> log files can help diagnose startup issues. They can be found in the following location:</p>
+<p><a name="v78639975"></a><code class="filename"><i class="replaceable">Symantec_Endpoint_Protection_Manager_installation_folder</i>/logs/tomcat</code></p>
+</li>
+</ul>
+</div>
+<p><a name="v78528890"></a>The following issues can be checked in the PowerShell scripts, or in any equivalent calls that your web service client makes.</p>
+<div class="itemizedlist">
+<a name="v78528891"></a><p class="title">Common issues</p>
+<ul type="disc">
+<li>
+<p><a name="v78528893"></a><a name="v78528894"></a>You get a navigation error when your client tries to connect to Symantec Endpoint Protection Manager to perform any task, including registration. Check that the Symantec Endpoint Protection Manager hostname/IP address or web services port number are correct. See <a href="RMM_Mgt0013.html" title="Registering an application with Symantec Endpoint Protection Manager">Registering an application with Symantec Endpoint Protection Manager</a>.</p>
+<p><a name="v78528895"></a>These values must be correct in the following locations:</p>
+<div class="itemizedlist">
+<a name="v78528896"></a><ul type="circle">
+<li><p><a name="v78528897"></a><a name="v78528898"></a><code class="filename">Config.xml</code> if you are testing the sample PowerShell scripts. See <a href="RMM_Mgt0024.html" title="Using the sample PowerShell scripts">Using the sample PowerShell scripts</a>.</p></li>
+<li><p><a name="v78528899"></a><a name="v78528900"></a><code class="filename">Get-SepmRmmWsAccessToken.ps1</code>, if you choose to test getting and setting an access token manually. <code class="filename">Write-AccessTokenToConfig.ps1</code> takes care of this issue for you.</p></li>
+<li><p><a name="v78528901"></a><a name="v78528902"></a>The WSDL files</p></li>
+</ul>
+</div>
+</li>
+<li><p><a name="v78528930"></a><a name="v78528931"></a>You get an error message like "Full authentication is required to access this resource." Check to make sure that you include the access token in your HTTP header or URL. Check to make sure that the access token is not expired. If the access token is expired, use the refresh token to get a new access token. Your code should also handle the situation where an access token is revoked gracefully.See <a href="RMM_Mgt0016.html" title="Including the OAuth token in calls to web services">Including the OAuth token in calls to web services</a>. See <a href="RMM_Mgt0014.html" title="Authorizing an application to call Symantec Endpoint Protection Manager web services">Authorizing an application to call Symantec Endpoint Protection Manager web services</a>.</p></li>
+<li>
+<p><a name="v78529035"></a><a name="v78529036"></a>You get an <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">InvalidArgumentServiceException</span> error. For more information about errors in individual web methods, see the Reference Guide. Common causes of these errors include the following:</p>
+<div class="itemizedlist">
+<a name="v78529037"></a><ul type="circle">
+<li><p><a name="v78529038"></a><a name="v78529039"></a>Out-of-date WSDL files. Check to make sure that you are using WSDL files from the SDK that was provided with the Symantec Endpoint Protection Manager that you are building your client against, or generate the WSDL files dynamically. See <a href="RMM_Mgt0020.html" title="Managing WSDL files for your web service calls">Managing WSDL files for your web service calls</a>.</p></li>
+<li><p><a name="v78529040"></a><a name="v78529041"></a>For errors in calls to the methods of <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">PolicyService</span>, Message Transmission Optimization Mechanism (MTOM) is not enabled. Check to make sure that MTOM is enabled in your client.</p></li>
+<li><p><a name="v78529042"></a><a name="v78529043"></a>For errors in calls to the methods of <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">PolicyService</span>, the <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">policyFileContentID</span> (<span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">CID</span>) parameter does not match the CID of an actual policy file. Verify  the CID request in your client.</p></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<p><a name="v78529058"></a>See <a href="RMM_Mgt0008.html" title="Creating a web services client application">Creating a web services client application</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/*****************************************
+*		 HEBREW ENTERPRISE CSS           *
+*****************************************/
+
+}
+	
+/*==========================================
+/  LIST ELEMENTS (items, titles, intro's)  /
+==========================================*/
+
+.procedure ul li
+{
+background-position: 0 right;
+padding-left: 1.4em;
+padding-right: 4em;}
+
+
+.procedure .itemizedlist ul li
+{
+margin-left: 0px
+padding-right: .2em;
+margin-right: -5px;
+}
+
+
+/*==========================================
+/  			HEADING & INTRO PARA'S			  /
+==========================================*/
+
+h5, h6
+	{
+    text-align: right;
+	}
+
+h2.subtitle
+  {
+    text-align: right;
+  }
+
+div.grid p.title, div.rowline p.title, div.gridwide p.title
+    {
+    text-align: right;
+    }
+
+div.figure p.title
+	{
+    text-align: right;
+    }
+
+div.moreinfo p.title
+	{
+    text-align: right;
+   
+    }
+
+p.ref
+  {
+  text-align: right;
+  }
+
+
+/*==========================================
+/      TABLES					  /
+==========================================*/
+
+table.complex th
+ {
+  text-align: right;
+}
+
+
+thead p
+	{
+	text-align: right;
+	}
+
+td
+	{
+	padding-bottom: 0px;
+	}
+		
+/*==========================================
+/  				NOTES & WARNINGS				  /
+==========================================*/
+
+
+
+/*==========================================
+/ Styles for Add Bookmark page.            /
+==========================================*/
+
+/*==========================================
+/  				Document Defaults				  /
+==========================================*/
+

@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Licensing events</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66552434">
+<META name="CONTENT_SOURCE_REVISION" content="12012011213235">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66552434"></a>Licensing events</h2></div></div></div>
+<p><a name="v66552454"></a>The following events are written to the Windows Event Log on the Symantec Endpoint Protection management server.</p>
+<p><a name="v66552499"></a></p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v66562149"></a>EventIDs 7103 and 7113 (out of compliance with licenseing requirements) are written in the case of any expired license type: purchased, trial, or upgrade. These events are also written in the case where a current license is deleted on the Symantec Endpoint Protection management server. Any scripts written to monitor licensing status should therefore examine the timestamp of the event first, not the eventID.</p></td>
+</tr></table></div>
+<p><a name="v66889450"></a>See <a href="RMM_Mgt0045.html" title="About Symantec Endpoint Protection licensing">About Symantec Endpoint Protection licensing</a>.</p>
+<p><a name="v66889453"></a>See <a href="RMM_Mgt0044.html" title="Monitoring license state on the management server">Monitoring license state on the management server</a>.</p>
+<div class="table">
+<a name="v66552455"></a><p class="title">Table: </p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66552464"></a><p>Event Source</p>
+</th>
+<th><p>Category</p></th>
+<th><p>EventID</p></th>
+<th><p>Type</p></th>
+<th><p>Target Log</p></th>
+<th><p>Message Text</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66552466"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7100</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Endpoint Protection is in compliance with the license requirements.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552467"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7101</p></td>
+<td><p>Warning</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Endpoint Protection license is about to expire.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552468"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7103</p></td>
+<td><p>Error</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Endpoint Protection is out of compliance with the license requirements. The total number of seats in use exceeds the number of current licensed seats.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552469"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7104</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Endpoint Protection trial license is installed.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552470"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7105</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Endpoint Protection upgrade license is installed.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table">
+<a name="v66552471"></a><p class="title">Table: </p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66552480"></a><p>Event Source</p>
+</th>
+<th><p>Category</p></th>
+<th><p>EventID</p></th>
+<th><p>Type</p></th>
+<th><p>Target Log</p></th>
+<th><p>Message Text</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66552482"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7110</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Network Access Control is in compliance with the license requirements.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552483"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7111</p></td>
+<td><p>Warning</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Network Access Control license is about to expire.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552484"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7113</p></td>
+<td><p>Error</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Network Access Control is out of compliance with the license requirements. The total number of seats in use exceeds the number of current licensed seats.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552485"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7114</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Network Access Control trial license is installed.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66552486"></a><p>SEPM</p>
+</td>
+<td><p>Licensing</p></td>
+<td><p>7115</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Symantec Network Access Control upgrade license is installed.</p>
+<p>[details:] See <a href="RMM_Mgt0050.html#v66562100" title="Table: Licensing message text details" class="tablefigure">Table: Licensing message text details</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v66562099"></a>The licensing message text field contains the following subfields, in addition to the message text prefix that is specific to each eventID.</p>
+<div class="table">
+<a name="v66562100"></a><p class="title">Table: Licensing message text details</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Licensing message text details" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66562106"></a><p>Subfield label</p>
+</th>
+<th><p>Subfield description</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66562108"></a><p>Total licensed seats:</p>
+</td>
+<td><p>The total number of available seats in all licenses.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66562109"></a><p>Total seats used:</p>
+</td>
+<td><p>The total number of used seats in all licenses.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66562110"></a><p>License type:</p>
+</td>
+<td>
+<p>ENUM. 0 = Purchased (per license), 1 = Trial, 2 = Upgrade</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">This subfield and the following two subfields repeat for each license.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66562111"></a><p>Seats in this license:</p>
+</td>
+<td><p>The number of seats in the license specified by the license type subfield. For trial and upgrade licenses, this value is always <span class="guilabel">Unlimited</span>, even though the license may have expired. In the case of expired trial or upgrade licenses, the Total licensed seats field displays 0.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66562112"></a><p>Expiration date for this license:</p>
+</td>
+<td><p>The expiration date for this license, in UTC complete date format.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

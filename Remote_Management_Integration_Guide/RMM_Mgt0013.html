@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Registering an application with Symantec Endpoint Protection Manager</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v75108692">
+<META name="CONTENT_SOURCE_REVISION" content="08032012165919">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v75108692"></a>Registering an application with Symantec Endpoint Protection Manager</h2></div></div></div>
+<p><a name="v75108695"></a>To work with Symantec Endpoint Protection Manager web services, a web services client application must first be registered with the instance of Symantec Endpoint Protection Manager that the web services client will manage. Registration is performed on the Symantec Endpoint Protection Manager server, and a Symantec Endpoint Protection Manager administrator account of any type is required. Registration is performed only once for each instance of Symantec Endpoint Protection Manager.</p>
+<p><a name="v75363908"></a>In the case of a third-party web services client, this step is performed by a remote management administrator. The client application should provide a mechanism such as a form or web page for the administator to provide the required information to the application.</p>
+<div class="procedure">
+<a name="v75108962"></a><p class="title">To register an application with Symantec Endpoint Protection Manager</p>
+<ol type="1">
+<li>
+<a name="v75108964"></a> The following information is provided to the web services client application:<div class="itemizedlist">
+<a name="v78062032"></a><ul type="disc"><li><p><a name="v75108973"></a><a name="v75108974"></a>The IP address and web services port of the installed instance of Symantec Endpoint Protection Manager to be managed by the web services client. The default port number is 8446.</p></li></ul>
+</div>
+</li>
+<li>
+<a name="v78062035"></a>The administrator logs on to the instance of Symantec Endpoint Protection Manager at the following URL:<p><a name="v72169858"></a><span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">https://<i class="replaceable">&lt;hostname&gt;</i>:<i class="replaceable">&lt;port_number&gt;</i>/sepm/viewLoginRMM.do</span></p>
+<p><a name="v72169859"></a>where <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command"><i class="replaceable">&lt;hostname&gt;</i></span> and <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command"><i class="replaceable">&lt;port_number&gt;</i></span> are the IP address or hostname and web services port of the installed instance of Symantec Endpoint Protection Manager. The default URL is the following:</p>
+<p><a name="v78061646"></a><span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command"><a style="color:blue;" href="https://localhost:8446/sepm/viewLoginRMM.do" target="_blank">https://localhost:8446/sepm/viewLoginRMM.do</a></span></p>
+</li>
+<li>
+<a name="v75108968"></a>The administrator registers the application on this page.<div class="mediaobject">
+<a name="v76401965"></a><img src="images/Registration.png">
+</div>
+</li>
+<li>
+<a name="v75108970"></a>The administrator provides the following information to the web services client:<div class="itemizedlist">
+<a name="v75108972"></a><ul type="disc"><li><p><a name="v75108975"></a><a name="v75108976"></a>The client ID and client secret that are returned when the application is registered.</p></li></ul>
+</div>
+</li>
+</ol>
+</div>
+<p><a name="v75109374"></a>See <a href="RMM_Mgt0014.html" title="Authorizing an application to call Symantec Endpoint Protection Manager web services">Authorizing an application to call Symantec Endpoint Protection Manager web services</a>.</p>
+<p><a name="v75109412"></a>See <a href="RMM_Mgt0012.html" title="Using OAuth with Symantec Endpoint Protection Manager web services">Using OAuth with Symantec Endpoint Protection Manager web services</a>.</p>
+</div>
+</body>
+</html>

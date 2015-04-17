@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Monitoring license state on the management server</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v64381622">
+<META name="CONTENT_SOURCE_REVISION" content="03192012111531">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v64381622"></a>Monitoring license state on the management server</h2></div></div></div>
+<p><a name="v64382552"></a>License monitoring is key to making sure that your endpoints are always protected. You can check Symantec Endpoint Protection licenses and  Symantec Network Access Control     licenses by monitoring a set of license events that are written to the Windows Event Log on the management server.</p>
+<p><a name="v67038384"></a>See <a href="RMM_Mgt0042.html" title="Monitoring the management server">Monitoring the management server</a>.</p>
+<p><a name="v69805385"></a>See <a href="RMM_Mgt0046.html" title="Server monitoring examples">Server monitoring examples</a>.</p>
+<p><a name="v66552335"></a>If you are not familiar with license management for Symantec Endpoint Protection, it may help to understand the product licensing model.</p>
+<p><a name="v66889430"></a>See <a href="RMM_Mgt0045.html" title="About Symantec Endpoint Protection licensing">About Symantec Endpoint Protection licensing</a>.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v66552337"></a>There can be more than one valid purchased license. An individual license is associated with a specific number of seats. The license status becomes out of compliance (over-deployed) only if there are not enough total valid seats in all licenses.</p></td>
+</tr></table></div>
+<div class="table">
+<a name="v64393677"></a><p class="title">Table: Monitoring license state</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Monitoring license state" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v64393684"></a><p>Data point</p>
+</th>
+<th><p>Data point description</p></th>
+<th><p>How to retrieve the data</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v64393686"></a><p>License status</p>
+</td>
+<td>
+<p>Summary of the current license status.</p>
+<p>License status can be one of the following:</p>
+<div class="itemizedlist"><ul type="disc">
+<li><p>In compliance</p></li>
+<li><p>About to expire</p></li>
+<li><p>Over-deployed</p></li>
+<li><p>Trial license is installed</p></li>
+<li><p>Upgrade license is installed.</p></li>
+</ul></div>
+</td>
+<td>
+<p>Use WMI to query for the most recent events from the Windows Event Log on the management server, Source Symantec Endpoint Protection, category Licensing, in the eventID range 7100 to 7105 for Symantec Endpoint Protection, and in the eventID range 7110 to 7115 for Symantec Network Access Control.</p>
+<p>The most recent event in the range indicates the current license status. Each state is reported separately for Symantec Endpoint Protection and for Symantec Network Access Control.</p>
+<p>See <a href="RMM_Mgt0050.html" title="Licensing events">Licensing events</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v64393687"></a><p>License details</p>
+</td>
+<td><p>Information about all Symantec Endpoint Protection licenses.</p></td>
+<td>
+<p>Detailed information about each license is provided in the message text for the Licensing events. This information is useful to determine what kinds of licenses are installed, when they expire, and how to remediate in the case of overall over-deployed state or a license that is about to expire.</p>
+<p>See <a href="RMM_Mgt0050.html" title="Licensing events">Licensing events</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

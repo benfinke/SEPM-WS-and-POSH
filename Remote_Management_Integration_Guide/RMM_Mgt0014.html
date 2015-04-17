@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Authorizing an application to call Symantec Endpoint Protection Manager web services</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v75108693">
+<META name="CONTENT_SOURCE_REVISION" content="08102012125501">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v75108693"></a>Authorizing an application to call Symantec Endpoint Protection Manager web services</h2></div></div></div>
+<p><a name="v75109011"></a>Every administrator who manages Symantec Endpoint Protection Manager by using web services must authorize the web services client application to make web service calls on their behalf. This procedure is also called user consent.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote">
+<p class="first-admon"><a name="v75109014"></a>The application must first be registered with Symantec Endpoint Protection Manager.</p>
+<p><a name="v76401345"></a>For authorization, each remote management administrator account should map to a single Symantec Endpoint Protection Manager administrator account. A Symantec Endpoint Protection Manager administrator is always logged on to a single Symantec Endpoint Protection Manager domain at a time, even if the administrator has access rights to multiple domains.</p>
+</td>
+</tr></table></div>
+<p><a name="v75890733"></a>Authorization represents the first authentication handshake between the remote management application and Symantec Endpoint Protection Manager.This procedure returns  an authorization code that is then exchanged by the remote application for the access token that must be included with each web service call. An access token is associated with a single   Symantec Endpoint Protection Manager administrator account and should not be shared. In other words, authorization is per user, not per application.</p>
+<p><a name="v75109012"></a> An administrator must re-authorize whenever a password or any other account information is changed, including access rights. A web services client application can avoid some re-authorization requests if the refresh token is used to obtain a new access token. See <a href="RMM_Mgt0017.html" title="Refreshing the access token">Refreshing the access token</a>.</p>
+<div class="procedure">
+<a name="v75109015"></a><p class="title">To authorize an application to call Endpoint Protection web services</p>
+<ol type="1">
+<li>
+<a name="v75109017"></a>The administrator is presented with a browser window that points to the following URL. The client application constructs the URL from the information that was returned during registration.<p><a name="v72170113"></a><span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command">https://<i class="replaceable">&lt;hostname&gt;</i>:<i class="replaceable">&lt;port_number&gt;</i>/sepm/oauth/authorize?response_type=code&amp;client_id=<i class="replaceable">&lt;client_id&gt;</i>&amp;redirect_uri=https://<i class="replaceable">&lt;hostname&gt;</i>:<i class="replaceable">&lt;port_number&gt;</i>/sepm</span></p>
+<p><a name="v75109020"></a>where <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command"><i class="replaceable">&lt;hostname&gt;</i></span> and <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command"><i class="replaceable">&lt;port_number&gt;</i></span> are the IP address or hostname and web services port of the installed instance of Symantec Endpoint Protection Manager, and where <span xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" class="command"><i class="replaceable">&lt;client_id&gt;</i></span>  is the client ID that was provided when the application was registered.</p>
+</li>
+<li>
+<a name="v75109021"></a>The administrator logs on to the specified Symantec Endpoint Protection Manager and authorizes the application to call the web services.</li>
+</ol>
+</div>
+<div class="mediaobject">
+<a name="v76401943"></a><img src="images/Authorization.png">
+</div>
+<p><a name="v75363960"></a> An authorization code is returned in the request response, and is then exchanged for an access token.</p>
+<p><a name="v75109372"></a>See <a href="RMM_Mgt0015.html" title="Getting an OAuth access token from the authorization code">Getting an OAuth access token from the authorization code</a>.</p>
+<p><a name="v75109023"></a>The rest of the process to authenticate web service calls is performed by the remote management application without further intervention by the user of the application.</p>
+<p><a name="v75109407"></a>See <a href="RMM_Mgt0012.html" title="Using OAuth with Symantec Endpoint Protection Manager web services">Using OAuth with Symantec Endpoint Protection Manager web services</a>.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Content revision state events on the management server</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v66564465">
+<META name="CONTENT_SOURCE_REVISION" content="01252012123818">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v66564465"></a>Content revision state events on the management server</h2></div></div></div>
+<p><a name="v66564622"></a>Content revision state events are written to the Windows Event Log on the management server and on the client.</p>
+<p><a name="v66564527"></a>Content revision state on the management server is important if the server is configured to provide client updates.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v66755472"></a>Content revision state events are written separately for each content type that  the management server is registered to download. For a list of the available content types, see the Symantec Endpoint Protection documentation.</p></td>
+</tr></table></div>
+<p><a name="v66564624"></a>See <a href="RMM_Mgt0042.html" title="Monitoring the management server">Monitoring the management server</a>.</p>
+<div class="table">
+<a name="v66755438"></a><p class="title">Table: </p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66755448"></a><p>Event Source</p>
+</th>
+<th><p>Category</p></th>
+<th><p>EventID</p></th>
+<th><p>Type</p></th>
+<th><p>Target Log</p></th>
+<th><p>Message Text</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66755450"></a><p>SEPM</p>
+</td>
+<td><p>Content</p></td>
+<td><p>7200</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Content was successfully downloaded to the Symantec Endpoint Protection management server.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66755452"></a><p>SEPM</p>
+</td>
+<td><p>Content</p></td>
+<td><p>7201</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Content could not be downloaded to the Symantec Endpoint Protection management server.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66755454"></a><p>SEPM</p>
+</td>
+<td><p>Content</p></td>
+<td><p>7202</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Content was successfully installed on the Symantec Endpoint Protection management server.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66755456"></a><p>SEPM</p>
+</td>
+<td><p>Content</p></td>
+<td><p>7203</p></td>
+<td><p>Warning</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td>
+<p>[prefix:] Content could not be installed on the Symantec Endpoint Protection management server.</p>
+<p>[details:] See <a href="RMM_Mgt0049.html#v66756672" title="Table: Content message text details" class="tablefigure">Table: Content message text details</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v66755458"></a><p>SEPM</p>
+</td>
+<td><p>Content</p></td>
+<td><p>7210</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td><p>LiveUpdate session started.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66755460"></a><p>SEPM</p>
+</td>
+<td><p>Content</p></td>
+<td><p>7211</p></td>
+<td><p>Information</p></td>
+<td><p>Symantec Endpoint Protection Manager</p></td>
+<td><p>LiveUpdate session completed. Total elapsed time: [ ]minutes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a name="v66757045"></a>The content message text field contains the following subfields, in addition to the message text prefix that is specific to each eventID. Only the relevant subfields are written to the message text. For example, the source is written only to events that log download success or failure.</p>
+<div class="table">
+<a name="v66756672"></a><p class="title">Table: Content message text details</p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="Content message text details" cellpadding="5" width="100%" class="complex">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v66756678"></a><p>Subfield label</p>
+</th>
+<th><p>Subfield description</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v66756680"></a><p>Product</p>
+</td>
+<td><p>Symantec product (content type) registered with LiveUpdate.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66756681"></a><p>Version</p>
+</td>
+<td><p>The version number of the content type specified in the <span class="guimenuitem">Product</span> subfield.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66756682"></a><p>Language</p>
+</td>
+<td><p>The language in which the specified content type is published.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66756683"></a><p>Monikers</p>
+</td>
+<td><p>Server monikers, comma-separated</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66756684"></a><p>Sequence</p>
+</td>
+<td><p>Raw revision sequence</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66757052"></a><p>PublishDate</p>
+</td>
+<td><p>The date that this content type was published, in UTC complete date format.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66757053"></a><p>Revision</p>
+</td>
+<td><p>[int]</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66757054"></a><p>Size (in bytes)</p>
+</td>
+<td><p>The size of the content package, in bytes (per content type)</p></td>
+</tr>
+<tr>
+<td>
+<a name="v66757055"></a><p>Source</p>
+</td>
+<td>
+<p>The source from which the management server downloaded the specified content type (ENUM). Options are:</p>
+<div class="itemizedlist"><ul type="disc">
+<li>
+<p>1 = publicLU</p>
+<p>Public (Symantec) LiveUpdate server</p>
+</li>
+<li>
+<p>2 = privateLU</p>
+<p>LiveUpdate server installed on a customer's internal network. This type of LiveUpdate server is configured by using the LiveUpdate Administration utility.</p>
+</li>
+</ul></div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html PUBLIC "http://www.w3.org/TR/REC-html40/strict.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Registry key location changes in version 12.1.11xx</title>
+<link rel="stylesheet" href="wghelp.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.68.1">
+<META name="CONTENT_SOURCE_ID" content="v67776375">
+<META name="CONTENT_SOURCE_REVISION" content="03292012105448">
+<META name="HELP_ID" content="/NULL/">
+<script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/towwhdir.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/wwhpagef.js"></script><script type="text/javascript" language="Javascript1.2" src="wwhdata/common/context.js"></script><script><!--
+//
+// Set reference to top level help frame
+var  WWHFrame = WWHGetWWHFrame("");
+//
+// Update reference to top level help frame
+var  WWHelpTopFrame = eval("parent");
+//
+  if (document.layers) {
+  window.onresize = reloadpage;
+  }
+  
+  function reloadpage() {
+  document.location = document.location;
+  }
+
+  function setPixelLoc() {
+  }
+//
+--></script><!--Copyright 1999-2012 Symantec Corporation -->
+</head>
+<body bgcolor="#FFFFFF" text="black" link="#0000FF" vlink="#840084" alink="#0000FF" onLoad="WWHUpdate();">
+<script type="text/javascript" language="JavaScript"><!--
+      function  WWHUpdateFavorite(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fUpdateFavorite(ParamHREF);
+      }
+    }
+
+    function  WWHSyncTOC(ParamHREF)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fSyncTOC(ParamHREF);
+      }
+    }
+
+    function  WWHShowPopup(ParamContext,
+                           ParamLink,
+                           ParamEvent)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        if ((ParamEvent == null) &&
+            (window.event != null))
+        {
+          ParamEvent = window.event;  // Older IE browsers only store event in window.event
+        }
+
+        WWHelpTopFrame.WWHelpFrameSet.fShowPopup(ParamContext, ParamLink, ParamEvent);
+      }
+    }
+
+    function  WWHHidePopup()
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        WWHelpTopFrame.WWHelpFrameSet.fHidePopup();
+      }
+    }
+
+    function  WWHClickedPopup(ParamContext,
+                              ParamLink)
+    {
+      if ((WWHelpTopFrame != null) &&
+          (WWHelpTopFrame.WWHelpFrameSet != null))
+      {
+        location.href = WWHelpTopFrame.WWHelpFrameSet.fClickedPopup(ParamContext, ParamLink);
+      }
+    }
+--></script><script type="text/javascript" language="JavaScript"><!--
+      var  WWHelpHREF = location.href;
+      WWHUpdateFavorite(WWHelpHREF);
+     // 
+--></script><div class="section" lang="EN_US">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="v67776375"></a>Registry key location changes in version 12.1.11xx</h2></div></div></div>
+<p><a name="v67776379"></a>To provide better support for a set of registry keys that are commonly used for client monitoring, the following subkeys have been moved in Symantec Endpoint Protection version 12.1.11xx. If you run custom scripts against the Symantec Endpoint Protection registry, or if you have written a remote monitoring solution for an earlier release, you will need to revise them when you upgrade to this release.</p>
+<p><a name="v69921710"></a>All new registry subkeys are written to the following location: <span class="guilabel">HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</span>.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v69922051"></a>This list includes only registry subkeys that were moved in this release. New subkeys are documented elsewhere. See <a href="RMM_Mgt0052.html" title="Operational state reference">Operational state reference</a>.</p></td>
+</tr></table></div>
+<div class="warning"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Warning: </p></td>
+<td class="pnote"><p class="first-admon"><a name="v69922053"></a>All registry subkeys and values for Symantec Endpoint Protection should be treated as read-only.</p></td>
+</tr></table></div>
+<div class="table">
+<a name="v69921630"></a><p class="title">Table: </p>
+<table xmlns:stbl="http://nwalsh.com/xslt/ext/com.nwalsh.saxon.Table" xmlns:xtbl="com.nwalsh.xalan.Table" xmlns:ptbl="http://nwalsh.com/xslt/ext/xsltproc/python/Table" summary="" cellpadding="5" class="complex">
+<colgroup>
+<col>
+<col>
+<col>
+<col>
+</colgroup>
+<thead><tr>
+<th>
+<a name="v69921638"></a><p>Subkey name</p>
+</th>
+<th><p>Previous location</p></th>
+<th><p>New location</p></th>
+<th><p>Used for</p></th>
+</tr></thead>
+<tbody valign="top">
+<tr>
+<td>
+<a name="v69921640"></a><p>ASRunningStatus</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\AV\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td>
+<p>Registers whether Virus and Spyware Protection is enabled or disabled.</p>
+<div class="note"><table border="0" cellpadding="1" class="note"><tr valign="top">
+<td><p class="notetext">Note: </p></td>
+<td class="pnote"><p class="first-admon">This subkey appears to be redundant with the following subkey.</p></td>
+</tr></table></div>
+</td>
+</tr>
+<tr>
+<td>
+<a name="v69921641"></a><p>AVRunningStatus</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\AV\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers whether Virus and Spyware Protection is enabled or disabled.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69922851"></a><p>DeployPreviousVersion</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC\SYLINK\SyLink\OpState\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers the four-part version number of the Symantec Endpoint Protection client software that was previously installed on the client computer.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921642"></a><p>DeployRunningVersion</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC\SYLINK\SyLink\OpState\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers the four-part version number of the Symantec Endpoint Protection client software that is currently installed on the client computer.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921643"></a><p>DeployStatus</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC\SYLINK\SyLink\OpState\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers details about the status of client software download, installation, upgrade, or patch. </p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921644"></a><p>DeployTargetVersion</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC\SYLINK\SyLink\OpState\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers the four-part version number of the Symantec Endpoint Protection client software that is planned for future installation on the client computer.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921645"></a><p>FWRunningStatus</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\AV\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers whether firewall protection is enabled or disabled.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921646"></a><p>Infected</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\AV\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers whether the client computer is infected with one or more risks that are detected by Virus and Spyware Protection.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921647"></a><p>LastServerIP</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC\SYLINK\SyLink\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers the IP address of the most recent Symantec Endpoint Protection management server that the client connected to.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921648"></a><p>RebootReason</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\SMC\SYLINK\SyLink\OpState\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers the reason for a restart of the client computer.</p></td>
+</tr>
+<tr>
+<td>
+<a name="v69921649"></a><p>snac_enabled</p>
+</td>
+<td><p>HKEY_LOCAL_MACHINE\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\SMC\</p></td>
+<td><p>HKLM\SOFTWARE\Symantec\Symantec Endpoint Protection\CurrentVersion\Public-Opstate</p></td>
+<td><p>Registers whether Symantec Network Access Control is enabled or disabled.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
